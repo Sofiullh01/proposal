@@ -1,0 +1,72 @@
+body {
+    background-color: #ffe6f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: pink;
+    transform: rotate(45deg);
+    margin: 0 auto 20px;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -50px;
+}
+
+button {
+    background-color: #ff99cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff66b2;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.congrats {
+    display: none;
+    color: #ff66b2;
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
