@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    position: relative;
 }
 
 .container {
@@ -63,10 +64,63 @@ button:hover {
     color: #ff66b2;
     font-size: 24px;
     margin-top: 20px;
-    animation: fadeIn 2s;
+    animation: fadeIn 3s;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes ball {
+    0% {
+        left: 0;
+        top: 0;
+    }
+    25% {
+        left: calc(70% - 100px); /* Move to the right */
+        top: 0;
+    }
+    50% {
+         /* Keep to the right */
+        top: calc(100% - 100px); /* Move to the bottom */
+    }
+    75% {
+        left: 0;
+        top: calc(100% - 100px); /* Keep to the bottom */
+    }
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes riseAndDisappear {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: -10%;
+        opacity: 0;
+    }
+}
+
+.two {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #ffbadd;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -25px;
+    animation: ball 20s infinite, riseAndDisappear 3s forwards;
+    display: none; /* Hide initially */
+}
+
+.rise {
+    display: block;
+    animation: riseAndDisappear 3s forwards;
 }

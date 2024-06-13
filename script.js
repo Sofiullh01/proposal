@@ -11,4 +11,8 @@ document.getElementById('accept-btn').addEventListener('click', function() {
     setTimeout(function() {
         congratsMessage.style.display = 'block';
     }, 200);
+
+    // Add this section to trigger the rise animation
+    const twoElement = document.querySelector('.two');
+    twoElement.classList.add('rise');
 });
