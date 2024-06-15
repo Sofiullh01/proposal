@@ -9,8 +9,9 @@ body {
     position: relative;
 }
 
-.container {
+#container {
     text-align: center;
+    z-index: 0;
 }
 
 .heart {
@@ -46,6 +47,7 @@ button {
     background-color: #ff99cc;
     color: white;
     border: none;
+    z-index: 1000;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -123,4 +125,13 @@ button:hover {
 .rise {
     display: block;
     animation: riseAndDisappear 3s forwards;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }

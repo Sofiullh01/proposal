@@ -1,18 +1,128 @@
 document.getElementById('accept-btn').addEventListener('click', function() {
+    // Congratulations audio play
     const congratsAudio = document.getElementById('congrats-audio');
     congratsAudio.play();
     
+    // Display congratulations message
     const congratsMessage = document.createElement('div');
     congratsMessage.className = 'congrats';
     congratsMessage.textContent = 'Congratulations! We are now in a relationship!';
     
-    document.querySelector('.container').appendChild(congratsMessage);
+    document.getElementById('container').appendChild(congratsMessage);
     
     setTimeout(function() {
         congratsMessage.style.display = 'block';
     }, 200);
 
-    // Add this section to trigger the rise animation
+    // Trigger the rise animation
     const twoElement = document.querySelector('.two');
     twoElement.classList.add('rise');
+
+    // ParticlesJS configuration
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 500,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": ["#ff0000", "#ff9900", "#ffff00", "#33cc33", "#3399ff", "#9900cc"]
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 1,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 0.5,
+                    "opacity_min": 0,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 5,
+                    "size_min": 0.3,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": false,
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": false,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
 });
